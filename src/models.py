@@ -386,6 +386,7 @@ class TranAD_Transformer(nn.Module):
 		self.n_hidden = 8
 		self.n_window = 10
 		self.n = 2 * self.n_feats * self.n_window
+		# 只用全连接层
 		self.transformer_encoder = nn.Sequential(
 			nn.Linear(self.n, self.n_hidden), nn.ReLU(True),
 			nn.Linear(self.n_hidden, self.n), nn.ReLU(True))
